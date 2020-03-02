@@ -9,7 +9,7 @@ def polyToArr(poly):
     else:
         return None
 
-def getAngle(a,b,c, CORRECTION_ANGLE): #checked is correct
+def getAngle(a,b,c, CORRECTION_ANGLE):
     ba = a - b
     bc = c - b
     cosine_angle = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc))
@@ -23,14 +23,9 @@ def getAngleGroundNormed(a,b,c, CORRECTION_ANGLE):
     vector_angle = getAngle(a,b,c, CORRECTION_ANGLE)
     ground_angle = getAngle(a,b,b_plane_point, CORRECTION_ANGLE)
     normed_angle = vector_angle/2 - ground_angle
-    # print("points",a,b,c,b_plane_point)
-    # print("angles",np.rad2deg(vector_angle),np.rad2deg(ground_angle),np.rad2deg(normed_angle))
-
     if(a[0]-b[0]<0):
-        # print("normed_angle l",np.rad2deg(normed_angle),np.rad2deg((normed_angle+np.deg2rad(180-CORRECTION_ANGLE))))
         return (normed_angle+np.deg2rad(180-CORRECTION_ANGLE))
     else:
-        # print("normed_angle r",np.rad2deg(normed_angle),np.rad2deg((np.deg2rad(360+CORRECTION_ANGLE)-normed_angle)))
         return (np.deg2rad(360+CORRECTION_ANGLE)-normed_angle)
 
 def angleMapper(pose, CORRECTION_ANGLE):
@@ -66,7 +61,6 @@ def poseToBisectVector(pose, CORRECTION_ANGLE):
     a,b,c = points[:,:2] # cut of confidence score so we have normal coordinate points
     bisecPoint = getBisecPoint(a,b,c, CORRECTION_ANGLE)
     return np.array([bisecPoint,b])
-    #return Polygon([bisecPoint,b])
 
 def poseToBisectCone(pose, length, angle, CORRECTION_ANGLE):
     width = np.deg2rad(angle)
@@ -75,16 +69,13 @@ def poseToBisectCone(pose, length, angle, CORRECTION_ANGLE):
         return None
     a,b,c = points[:,:2] # cut of confidence score so we have normal coordinate points
     conePoint1, conePoint2 = getBisecCone(a,b,c,length,width, CORRECTION_ANGLE)
-    #return np.array([conePoint1, conePoint2, b])
     return Polygon([conePoint1, conePoint2, b])
 
 def coneIntersections(bisecCones):
     out = {}
     for r in range(1,len(bisecCones)+1):
         pc = list(itertools.combinations(range(0,len(bisecCones)),r))
-        #print(pc)
         for combi in pc:
-            # print(combi)
             intersect = bisecCones[combi[0]]
             for i in combi[1:]:
                 intersect = intersect.intersection(bisecCones[i])
