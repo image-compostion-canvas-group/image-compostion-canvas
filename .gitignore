@@ -7,6 +7,7 @@ __pycache__/
 .DS_Store
 
 # ignore venv
+venv
 .Python
 [Bb]in
 [Ii]nclude

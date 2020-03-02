@@ -1,11 +1,19 @@
 Important: replace all pathes with your own path to your local instalation. Always use absolute pathes to avoid problems.
 
 ## Installation
-* Tested with `Python 3.7.5`, `pip 19.3.1` on `macOS 10.15`.
+Tested with `Python 3.7.5`, `pip 19.3.1` on `macOS 10.15`.
+
+* Optional: Create a virtual environment, to avoid version conflicts with previously installed packages.
+```bash
+git clone https://github.com/image-compostion-canvas-group/image-compostion-canvas
+cd image-compostion-canvas
+virtualenv .venv
+source .venv/bin/activate
+``` 
 * Install and build OpenPose with python bindings (including OpenCV), for details see [official instructions](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation.md#installation).
 * make sure to append the openpose python bindings to your python path: `export PYTHONPATH=/path/to/openpose/build/python:$PYTHONPATH`
 * set env var for openpose models `export OPENPOSE_MODELS="/path/to/openpose/models/"`
-* install all python dependencies: 'pip install -r requirements.txt'
+* install all python dependencies: `pip install -r requirements.txt`
 
 ## Usage
 * make sure you have set all env vars from installation step
