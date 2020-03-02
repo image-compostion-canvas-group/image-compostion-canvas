@@ -11,7 +11,7 @@ virtualenv .venv
 source .venv/bin/activate
 ``` 
 * If you skip the virtual env. Clone the repo with `git clone https://github.com/image-compostion-canvas-group/image-compostion-canvas`
-* Install and build OpenPose with python bindings (including OpenCV), for details see [official instructions](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation.md#installation). You can openpose at any location of your computer and set the path to your installation in the next step.
+* Install and build OpenPose with python bindings (including OpenCV), for details see [official instructions](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation.md#installation). You can install openpose at any location of your computer and set the path to your installation in the next step.
 * make sure to append the openpose python bindings to your python path and to set env var for openpose models. Make sure to replace `/path/to/openpose` with the absolute path to your openpose installation from the step above. Keep `/build/python` and `/models/` in this path.
 ```bash
 export PYTHONPATH="/path/to/openpose/build/python:$PYTHONPATH"
