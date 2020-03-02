@@ -24,6 +24,6 @@ pip install -r requirements.txt
 
 ## Usage
 * make sure you have set all env vars from installation step
-* prepare a folder with images as input folder
+* prepare a folder with images as input folder. Make sure there are only images inside the folder, otherwise the script will crash.
 * change the flags in detect_structures.py to specify your output format
 * start the main script, specify `IN_DIR` (folder with input images) and `OUT_DIR` for the results: `IN_DIR="/path/to/folder/with/input/images" OUT_DIR="/output/folder/with/results" python detect_structures.py`
