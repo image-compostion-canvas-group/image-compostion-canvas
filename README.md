@@ -27,9 +27,12 @@ ll results
 
 ## Usage with non Docker
 Important: replace all pathes with your own path to your local instalation. Always use absolute pathes to avoid problems.
-### Installation
-Tested with `Python 3.7.5`, `pip 19.3.1` on `macOS 10.15`.
 
+Tested with:
+* `Python 3.7.5`, `pip 19.3.1` on `macOS 10.15` with a CPU build of Caffe and OpenPose.
+* `Python 3.5.2`, `pip 20.0.2` on `Ubuntu 16.04` with a CPU build of Caffe and OpenPose.
+
+### Installation
 * Optional: Create a virtual environment, to avoid version conflicts with previously installed packages:
 ```bash
 git clone https://github.com/image-compostion-canvas-group/image-compostion-canvas
