@@ -13,7 +13,7 @@ In this example we analyse 3 Images from wikimedia.org (input_image folder) and 
 ```bash
 git clone https://github.com/image-compostion-canvas-group/image-compostion-canvas
 cd image-compostion-canvas
-rm results && mkdir results
+rm -rf results && mkdir results
 mkdir input_images
 cd input_images
 wget https://upload.wikimedia.org/wikipedia/commons/3/3e/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg
