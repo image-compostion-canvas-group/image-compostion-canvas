@@ -5,7 +5,6 @@ import cv2
 import numpy as np
 import os
 from sys import platform
-from dotmap import DotMap
 from shapely import affinity
 from shapely.geometry import Polygon
 from openpose import pyopenpose as op
@@ -79,10 +78,6 @@ for img_name in images:
     output_canvas = np.array([[[255,255,255]]*len(img[0])]*len(img),np.uint8)
     max_lw = len(img);
     esz = max_lw / DISPLAY_RASTER_ELEMENTS
-    if SKIP_OPENPOSE: #skip openpose for debugging, we use already calculated poses then, only works on image nr. 15
-        datum = DotMap()
-        datum.poseKeypoints = OPENPOSE_DEMO_KEYPOINTS
-        print("Skipping OPENPOSE")
     else:
         datum = op.Datum()
         datum.cvInputData = img

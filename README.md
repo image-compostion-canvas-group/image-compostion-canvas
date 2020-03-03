@@ -24,6 +24,19 @@ pip install -r requirements.txt
 
 ## Usage
 * make sure you have set all env vars from installation step
-* prepare a folder with images as input folder. Make sure there are only images inside the folder, otherwise the script will crash.
-* change the flags in detect_structures.py to specify your output format
+* prepare a folder with images as input folder. Make sure there are only images inside the folder, otherwise the script will crash. For example some images from wikimedia:
+```bash
+mkdir input_images
+cd input_images
+wget https://upload.wikimedia.org/wikipedia/commons/3/3e/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg
+wget https://upload.wikimedia.org/wikipedia/commons/a/a9/Giotto_di_Bondone_009.jpg
+wget https://upload.wikimedia.org/wikipedia/commons/f/f9/Giotto_-_Scrovegni_-_-18-_-_Adoration_of_the_Magi.jpg
+```
+* change the flags in detect_structures.py to specify the output format you want
 * start the main script, specify `IN_DIR` (folder with input images) and `OUT_DIR` for the results: `IN_DIR="/path/to/folder/with/input/images" OUT_DIR="/output/folder/with/results" python detect_structures.py`
+
+
+
+# Usage & Installation with Docker
+* docker build . -t image-composition-canvas
+* docker run --rm -it -v "/Users/Tilman/Documents/Programme/Python/forschungspraktikum/art-structures-env/image-compostion-canvas/input_images:/images/in" -v "/Users/Tilman/Documents/Programme/Python/forschungspraktikum/art-structures-env/image-compostion-canvas/results:/images/out" image-composition-canvas
