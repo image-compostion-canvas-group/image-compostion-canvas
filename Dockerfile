@@ -1,4 +1,4 @@
-FROM openpose-cpu-python:latest
+FROM triebwork/openpose-cpu-python:latest
 
 COPY . /app
 
