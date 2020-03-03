@@ -2,9 +2,10 @@
 
 ## Expected Results
 
-| Giotto Lower Church Assisi  | Our Result |
+| "Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg"  | Our Result |
 | ------------- | ------------- |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg" width="100%">  | <img src="./results/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg_final_colored_canvas.jpg" width="100%"> |
+| "Giotto_di_Bondone_009.jpg"  | Our Result |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Giotto_di_Bondone_009.jpg" width="100%">  | <img src="./results/Giotto_di_Bondone_009.jpg_final_colored_canvas.jpg" width="100%"> |
 
 ## Usage & Installation with Docker
