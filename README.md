@@ -2,11 +2,11 @@
 
 ## Expected Results
 
-| "Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg"  | Our Result |
+| wikimedia.org: Giotto, Lower Church Assisi, The Visitation 01.jpg  | Our Result |
 | ------------- | ------------- |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg" width="100%">  | <img src="./results/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg_final_colored_canvas.jpg" width="100%"> |
-| "Giotto_di_Bondone_009.jpg"  | Our Result |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Giotto_di_Bondone_009.jpg" width="100%">  | <img src="./results/Giotto_di_Bondone_009.jpg_final_colored_canvas.jpg" width="100%"> |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg" width="60%">  | <img src="./results/Giotto%2C_Lower_Church_Assisi%2C_The_Visitation_01.jpg_final_colored_canvas.jpg" width="83%"> |
+| wikimedia.org: Giotto di Bondone 009.jpg | Our Result |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Giotto_di_Bondone_009.jpg" width="60%">  | <img src="./results/Giotto_di_Bondone_009.jpg_final_colored_canvas.jpg" width="83%"> |
 
 ## Usage & Installation with Docker
 In this example we analyse 3 Images from wikimedia.org (input_image folder) and place the output image composition canvas in the results folder.
