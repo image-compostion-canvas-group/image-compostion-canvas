@@ -78,11 +78,10 @@ for img_name in images:
     output_canvas = np.array([[[255,255,255]]*len(img[0])]*len(img),np.uint8)
     max_lw = len(img);
     esz = max_lw / DISPLAY_RASTER_ELEMENTS
-    else:
-        datum = op.Datum()
-        datum.cvInputData = img
-        opWrapper.emplaceAndPop([datum])
-        img = datum.cvOutputData
+    datum = op.Datum()
+    datum.cvInputData = img
+    opWrapper.emplaceAndPop([datum])
+    img = datum.cvOutputData
     
     if INPAINT_AND_KMEANS:
         # general idea, people are placed in foreground 
