@@ -156,6 +156,8 @@ for img_name in images:
 
         if(len(filtered_km_mask_FG_colors)>0): #we can not do anything if we have no foreground colors
 
+            binary_output = kmeans_output.copy()
+
             cv2.putText(km_mask_out, "Foreground colors:", (10,25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255))
             
             cv2.rectangle(kmeans_output, (0,0), (235,30), (0,0,0), -1)
@@ -167,7 +169,6 @@ for img_name in images:
             cv2.putText(km_mask_out, "Foreground colors:", (10,25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255))
             cv2.rectangle(km_mask_out, (220,15), (230,25), (255,255,255), 1)
 
-            binary_output = kmeans_output.copy()
             offset=220;
             for color in filtered_km_mask_FG_colors:
                 #print colors on screen
@@ -216,11 +217,19 @@ for img_name in images:
                 cv2.imwrite(os.path.basename(img_name)+'_inkm_step6_1_kmean_morphclose.jpg',binary_output)
                 binary_output = cv2.erode(binary_output,kernel,iterations = 10)
                 binary_output = cv2.dilate(binary_output,kernel,iterations = 10)
+
                 cv2.imwrite(os.path.basename(img_name)+'_inkm_step6_2_kmean_morpopen.jpg',binary_output)
                 cv2.rectangle(binary_output, (0,0), (235,30), (0,0,0), -1)
                 cv2.putText(binary_output, "Foreground color:", (10,25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255))
                 cv2.rectangle(binary_output, (220,15), (230,25), (int(filtered_km_mask_FG_colors[0][0]),int(filtered_km_mask_FG_colors[0][1]),int(filtered_km_mask_FG_colors[0][2])), -1)
                 cv2.rectangle(binary_output, (220,15), (230,25), (255,255,255), 1)
+
+                
+                cv2.rectangle(binary_output, (0,0), (235,30), (0,0,0), -1)
+                cv2.putText(binary_output, "Foreground color:", (10,25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255))
+                cv2.rectangle(binary_output, (220,15), (230,25), (255,255,255), -1)
+                cv2.rectangle(binary_output, (220,15), (230,25), (255,255,255), 1)
+
                 output_canvas = binary_output
         else:
             print("WARNING: skipped fg/bg calc")

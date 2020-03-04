@@ -8,6 +8,7 @@ __pycache__/
 
 # ignore os stuff
 .DS_Store
+.vscode
 
 # ignore venv
 venv
